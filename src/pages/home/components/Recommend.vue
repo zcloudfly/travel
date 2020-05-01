@@ -2,7 +2,7 @@
   <div>
     <div class="retcommend-title">热销推荐</div>
     <ul>
-      <li class="item" v-for="item of recommentList " :key="item.id">
+      <li class="item" v-for="item of list " :key="item.id">
         <img class="item-img" :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -16,33 +16,36 @@
 <script>
 export default {
   name: "HomeRecommend",
-  data() {
-    return {
-      recommentList: [
-        {
-          id: "0001",
-          title: "北京-泰国",
-          desc: "含往返飞机票(含税)+5晚住宿*7天跟团游*超级划算",
-          imgUrl:
-            "//imgs.qunarzz.com/p/p48/201302/28/bc44faa497db0dcf93835fbb.jpg_256x160_0ba13461.jpg"
-        },
-        {
-          id: "0002",
-          title: "北京-三亚",
-          desc: "含往返飞机票(含税)+5晚住宿*7天跟团游*超级划算",
-          imgUrl:
-            "//imgs.qunarzz.com/p/p66/201304/17/384810d022dd28f793835fbb.jpg_256x160_6a7ec251.jpg"
-        },
-        {
-          id: "0003",
-          title: "北京-日本",
-          desc: "含往返飞机票(含税)+5晚住宿*7天跟团游*超级划算",
-          imgUrl:
-            "//imgs.qunarzz.com/p/p29/201302/28/3d20251a1b60350a93835fbb.jpg_256x160_e8f468b0.jpg"
-        }
-      ]
-    };
-  }
+  props:{
+      list:Array
+  },
+//   data() {
+//     return {
+//       recommentList: [
+//         {
+//           id: "0001",
+//           title: "北京-泰国",
+//           desc: "含往返飞机票(含税)+5晚住宿*7天跟团游*超级划算",
+//           imgUrl:
+//             "//imgs.qunarzz.com/p/p48/201302/28/bc44faa497db0dcf93835fbb.jpg_256x160_0ba13461.jpg"
+//         },
+//         {
+//           id: "0002",
+//           title: "北京-三亚",
+//           desc: "含往返飞机票(含税)+5晚住宿*7天跟团游*超级划算",
+//           imgUrl:
+//             "//imgs.qunarzz.com/p/p66/201304/17/384810d022dd28f793835fbb.jpg_256x160_6a7ec251.jpg"
+//         },
+//         {
+//           id: "0003",
+//           title: "北京-日本",
+//           desc: "含往返飞机票(含税)+5晚住宿*7天跟团游*超级划算",
+//           imgUrl:
+//             "//imgs.qunarzz.com/p/p29/201302/28/3d20251a1b60350a93835fbb.jpg_256x160_e8f468b0.jpg"
+//         }
+//       ]
+//     };
+//   }
 };
 </script>
 

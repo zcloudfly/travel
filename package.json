@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "fastclick": "^1.0.6",
     "style-loader": "^1.2.1",
     "stylus": "^0.54.7",
