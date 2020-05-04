@@ -22,6 +22,6 @@ export default new Router({
     }
   ],
   scrollBehavior(to,from,savePosition){
-    return{x:0,y:0}
+    return{x:0,y:0}//zzz
   }
 })
