@@ -3,18 +3,18 @@
     <div class="banner" @click="handleBannerClick">
       <img
         class="banner-img"
-        src="//img1.qunarzz.com/sight/p0/1903/5d/5dcaf453dfd6f5dba3.img.jpg_600x330_4f4a22ad.jpg"
+        :src="bannerImg"
       />
       <div class="banner-info">
-        <div class="banner-title">北京动物园(AAAA景区)</div>
+        <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
           <span class="iconfont banner-icon">&#xe647;</span>
-          39
+          {{this.gallaryImgs.length}}
         </div>
       </div>
     </div>
     <common-gailary 
-    :imgs="imgs"
+    :imgs="gallaryImgs"
     v-show="showGailary"
     @close="gailaryClose"
     ></common-gailary>
@@ -25,14 +25,14 @@
 import CommonGailary from "common/gailary/Gailary";
 export default {
   name: "DetailBanner",
+  props:{
+    sightName:String,
+    bannerImg:String,
+    gallaryImgs:Array
+  },
   data() {
     return {
-        showGailary:false,
-
-      imgs: [
-        "http://img1.qunarzz.com/sight/p0/1910/59/59a900f72a04ecb4a3.img.jpg_350x240_d1577d73.jpg",
-        "http://img1.qunarzz.com/sight/p0/1910/8a/8a5769748dd99a49a3.img.jpg_350x240_8480a477.jpg"
-      ]
+        showGailary:false
     };
   },
   methods:{
