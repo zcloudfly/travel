@@ -37,6 +37,10 @@ export default {
   },
   activated() {
     window.addEventListener("scroll", this.handleScroll);
+  },
+  deactivated(){
+      window.removeEventListener("scroll",this.handleScroll)
+
   }
 };
 </script>
@@ -61,6 +65,7 @@ export default {
 }
 
 .haeder-fixed {
+  z-index :2
   position: fixed;
   left: 0;
   top: 0;
