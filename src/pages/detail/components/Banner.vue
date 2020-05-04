@@ -1,10 +1,7 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img
-        class="banner-img"
-        :src="bannerImg"
-      />
+      <img class="banner-img" :src="bannerImg" />
       <div class="banner-info">
         <div class="banner-title">{{this.sightName}}</div>
         <div class="banner-number">
@@ -13,38 +10,38 @@
         </div>
       </div>
     </div>
-    <common-gailary 
-    :imgs="gallaryImgs"
-    v-show="showGailary"
-    @close="gailaryClose"
-    ></common-gailary>
+    <fade-action>
+      <common-gailary :imgs="gallaryImgs" v-show="showGailary" @close="gailaryClose"></common-gailary>
+    </fade-action>
   </div>
 </template>
 
 <script>
 import CommonGailary from "common/gailary/Gailary";
+import FadeAction from "common/fade/FadeAction.vue";
 export default {
   name: "DetailBanner",
-  props:{
-    sightName:String,
-    bannerImg:String,
-    gallaryImgs:Array
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
   },
   data() {
     return {
-        showGailary:false
+      showGailary: false
     };
   },
-  methods:{
-      handleBannerClick(){
-          this.showGailary=true
-      },
-      gailaryClose(){
-          this.showGailary=false
-      }
+  methods: {
+    handleBannerClick() {
+      this.showGailary = true;
+    },
+    gailaryClose() {
+      this.showGailary = false;
+    }
   },
   components: {
-    CommonGailary
+    CommonGailary,
+    FadeAction
   }
 };
 </script>
