@@ -10,6 +10,8 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    //代理api接口  目前取的是mock里的静态文件数据，真正项目
+    //会注释掉pathRewrite，直接掉用服务器后端接口数据
     proxyTable: {
       '/api': {
         target: 'http://localhost:8080',
